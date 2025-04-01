@@ -13,17 +13,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.gastrogenius.R;
 import com.example.gastrogenius.models.HomeVerModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHolder> {
 
     Context context;
-    List<HomeVerModel> list;
 
-    public HomeVerAdapter(Context context, List<HomeVerModel> list) {
+    ArrayList<HomeVerModel> list;
+    public HomeVerAdapter(Context context, ArrayList<HomeVerModel> list) {
         this.context = context;
         this.list = list;
     }
+
 
     @NonNull
     @Override
@@ -37,7 +39,7 @@ public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHold
         HomeVerModel model = list.get(position);
         holder.imageView.setImageResource(model.getImage());
         holder.name.setText(model.getName());
-        holder.rating.setText(model.getRating()); // Asegúrate de que rating sí existe en el layout
+        holder.rating.setText(model.getRating());
     }
 
     @Override
@@ -45,16 +47,22 @@ public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHold
         return list.size();
     }
 
+    // Método para actualizar los datos
+    public void updateData(List<HomeVerModel> newList) {
+        list.clear();  // Borra los datos anteriores
+        list.addAll(newList);  // Agrega los nuevos datos
+        notifyDataSetChanged();  // Notifica al RecyclerView para actualizarse
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        TextView name, rating; // Eliminamos "price"
+        TextView name, rating;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.ver_img);
             name = itemView.findViewById(R.id.name);
-            rating = itemView.findViewById(R.id.rating); // Asegúrate de que rating existe en tu XML
+            rating = itemView.findViewById(R.id.rating);
         }
     }
 }
-
