@@ -39,10 +39,10 @@ class HomeFragment : Fragment(), UpdateVerticalRec {
 
         // Agregar elementos a la lista horizontal
         homeHorModelList.apply {
+            add(HomeHorModel(R.drawable.ensalada, "Ensalada"))
+            add(HomeHorModel(R.drawable.salmon, "Salmón"))
             add(HomeHorModel(R.drawable.pizza1, "Pizza"))
             add(HomeHorModel(R.drawable.burger1, "Hamburguesa"))
-            add(HomeHorModel(R.drawable.fries1, "Fries"))
-            add(HomeHorModel(R.drawable.icecream1, "Postre"))
         }
         homeVerModelList.apply {
             add(HomeVerModel(R.drawable.burger2, "Hamburguesa", "4.8"))

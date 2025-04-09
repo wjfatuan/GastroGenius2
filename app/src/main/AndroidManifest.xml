@@ -12,26 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GastroGenius"
         tools:targetApi="31">
-
+        <activity
+            android:name=".activities.DetailedDailyMealActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.RegisterActivity"
             android:exported="false" />
-
         <activity
             android:name=".activities.LoginActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.GastroGenius.NoActionBar" />
-
         <activity
             android:name=".activities.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
