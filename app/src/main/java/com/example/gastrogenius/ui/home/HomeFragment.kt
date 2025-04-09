@@ -37,7 +37,7 @@ class HomeFragment : Fragment(), UpdateVerticalRec {
         homeHorizontalRec = view.findViewById(R.id.home_hor_rec)
         homeVerticalRec = view.findViewById(R.id.home_ver_rec)
 
-        // Agregar elementos a la lista horizontal
+
         homeHorModelList.apply {
             add(HomeHorModel(R.drawable.ensalada, "Ensalada"))
             add(HomeHorModel(R.drawable.salmon, "Salmón"))
